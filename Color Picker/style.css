@@ -1,0 +1,14 @@
+body {
+  font-size: 18px !important;
+}
+
+.mybtn {
+  border-radius: 10px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  font-size: 18px !important;
+}
+
+#btnCopy {
+  margin-left: -13px !important ;
+}
