@@ -11,4 +11,9 @@ htmlcov/
 dist/
 build/
 *.egg-info/
+<<<<<<< HEAD
 .vscode/
+=======
+.vscode/
+*/test.html
+>>>>>>> dbfb54b... color lighten/darken v1.0

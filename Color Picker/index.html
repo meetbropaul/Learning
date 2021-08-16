@@ -14,7 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
-  <body class="bg-dark text-light">
+  <body class="bg-dark text-light" onchange="btnUpdate()">
     <div class="container mt-5">
       <h3 class="text-center">Lighten/Darken Color</h3>
       <form action="/" class="was-validated">
@@ -79,22 +79,19 @@
             </div>
           </div>
         </div>
-
-        <div class="form-group">
-          <label for="inputColor">Input Color</label>
-          <input type="text" name="" id="inputColor" class="form-control" />
-        </div>
-
-        <div class="form-group">
-          <label for="alteredColor"
-            >Altered Color <span id="outputColorHex"></span
-          ></label>
-          <input type="text" id="alteredColor" class="form-control" />
-        </div>
       </form>
+
+      Input Color <span id="inputColorName" style="margin-left: 30px"></span>
+      <p id="inputColor"><span id="inputColorLabel"></span></p>
+
+      Altered Color
+      <span id="alteredColorName" style="margin-left: 15px"></span>
+
+      <p id="alteredColor"><span id="alteredColorLabel"></span></p>
+
       <div class="btn btn-group mt-2">
         <button id="btnCopy" class="btn btn-success mybtn" onclick="show()">
-          Copy
+          Select
         </button>
         <button class="btn btn-danger ml-5 mybtn" onclick="clearUserInput()">
           Clear
