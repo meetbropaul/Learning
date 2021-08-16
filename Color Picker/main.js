@@ -6,7 +6,6 @@ const toggleButton = document.getElementById('toggleButton');
 const darken = document.getElementById('darken');
 const sliderValue = document.getElementById('sliderValue');
 const inputColor = document.getElementById('inputColor');
-const outputColorHex = document.getElementById('outputColorHex');
 const alteredColor = document.getElementById('alteredColor');
 const inputColorName = document.getElementById('inputColorName');
 const alteredColorName = document.getElementById('alteredColorName');
@@ -43,9 +42,15 @@ function updateSelectColor() {
   alteredColorLabel.style.color = '';
 }
 
-// function updateSliderValue() {
-//   sliderValue.innerHTML = slider.value;
-// }
+function updateSliderValue() {
+  let startColor = alteredColorName.innerHTML;
+  startColor = startColor ? startColor : inputColorName.innerHTML;
+  if (startColor) {
+    const c = startColor.match(/[0-9]+/g);
+    slider.value = toggleButton.checked ? c[1] : c[2];
+    sliderValue.innerHTML = slider.value;
+  }
+}
 
 function clearUserInput() {
   userInputColor.value = '';
@@ -60,9 +65,6 @@ function clearUserInput() {
 }
 
 function toHSL(hex) {
-  // update slider value
-  sliderValue.innerHTML = slider.value;
-
   var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
 
   var r = parseInt(result[1], 16);

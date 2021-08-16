@@ -25,6 +25,7 @@
             id="selectColor"
             value="#ffffff"
             oninput="updateUserInput()"
+            onchange=" updateSliderValue()"
           />
 
           <div class="row">
@@ -39,6 +40,7 @@
                 required
                 placeholder="Enter Hex color e.g #00ffee"
                 oninput="updateSelectColor()"
+                onchange="updateSliderValue()"
                 class="form-control form-control-sm"
               />
 
@@ -59,6 +61,7 @@
               <input
                 type="checkbox"
                 id="toggleButton"
+                onchange="updateSliderValue()"
                 class="custom-control-input"
               />
               <label id="darken" for="toggleButton" class="custom-control-label"
