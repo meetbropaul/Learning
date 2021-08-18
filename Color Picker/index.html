@@ -15,11 +15,11 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   </head>
   <body class="bg-dark text-light" onchange="btnUpdate()">
-    <div class="container mt-5">
+    <div class="container-fluid mt-5">
       <h3 class="text-center">Color Picker/Mixer</h3>
       <form action="/" class="was-validated">
         <div class="form-group">
-          <label for="userInputColor">Select Color (Hex)</label>
+          <label for="selectColor">Select Color (Hex)</label>
           <input
             type="color"
             id="selectColor"
@@ -108,13 +108,19 @@
         </div>
       </form>
 
-      Input Color <span id="inputColorName" style="margin-left: 30px"></span>
-      <p id="inputColor"><span id="inputColorLabel"></span></p>
+      <span class="label">Input Color</span>
+      <span id="inputColorName" style="margin-left: 30px; display: none"></span
+      ><span id="inputColorLabel"></span>
+      <p id="inputColor"></p>
 
-      Altered Color
-      <span id="alteredColorName" style="margin-left: 15px"></span>
+      <span class="label">Altered Color</span>
+      <span
+        id="alteredColorName"
+        style="margin-left: 15px; display: none"
+      ></span
+      ><span id="alteredColorLabel"></span>
 
-      <p id="alteredColor"><span id="alteredColorLabel"></span></p>
+      <p id="alteredColor"></p>
 
       <div class="btn btn-group mt-2">
         <button id="btnCopy" class="btn btn-success mybtn" onclick="show()">

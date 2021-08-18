@@ -11,7 +11,8 @@ const inputColorName = document.getElementById('inputColorName');
 const alteredColorName = document.getElementById('alteredColorName');
 const btnCopy = document.getElementById('btnCopy');
 const inputColorLabel = document.getElementById('inputColorLabel');
-const alteredColorLabel = document.getElementById('alteredColorLabel');
+const alteredColorLabel =
+  document.getElementById('alteredColorLabel');
 const hue = document.getElementById('hue');
 const saturation = document.getElementById('saturation');
 const lightness = document.getElementById('lightness');
@@ -23,26 +24,24 @@ function updateUserInput() {
   inputColorName.innerHTML = mycolor;
   inputColorLabel.innerHTML =
     mycolor + ' ' + toRGB(mycolor) + ' ' + toHex(mycolor);
-  inputColorLabel.style.color = mycolor;
+
   alteredColorName.innerHTML = '';
   alteredColor.style.backgroundColor = '';
   alteredColorLabel.innerHTML = '';
-  alteredColorLabel.style.color = '';
 }
 
 function updateSelectColor() {
   selectColor.value = userInputColor.value;
   inputColor.style.backgroundColor = userInputColor.value;
-  // inputColorName.innerHTML = toHSL(userInputColor.value);
+
   let mycolor = toHSL(userInputColor.value);
   inputColorName.innerHTML = mycolor;
   inputColorLabel.innerHTML =
     mycolor + ' ' + toRGB(mycolor) + ' ' + toHex(mycolor);
-  inputColorLabel.style.color = mycolor;
+
   alteredColorName.innerHTML = '';
   alteredColor.style.backgroundColor = '';
   alteredColorLabel.innerHTML = '';
-  alteredColorLabel.style.color = '';
 }
 
 function updateSliderValue() {
@@ -153,7 +152,6 @@ function show() {
   alteredColor.style.backgroundColor = hsl;
   alteredColorName.innerHTML = hsl;
   alteredColorLabel.innerHTML = hsl + ' ' + toRGB(hsl) + ' ' + toHex(hsl);
-  alteredColorLabel.style.color = hsl;
 }
 
 function btnUpdate() {
