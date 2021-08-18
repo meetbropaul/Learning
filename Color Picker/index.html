@@ -16,7 +16,7 @@
   </head>
   <body class="bg-dark text-light" onchange="btnUpdate()">
     <div class="container mt-5">
-      <h3 class="text-center">Lighten/Darken Color</h3>
+      <h3 class="text-center">Color Picker/Mixer</h3>
       <form action="/" class="was-validated">
         <div class="form-group">
           <label for="userInputColor">Select Color (Hex)</label>
@@ -53,22 +53,46 @@
       </form>
 
       <form action="/">
+        <div class="custom-control custom-radio d-inline">
+          <input
+            type="radio"
+            class="custom-control-input"
+            id="hue"
+            name="hsl-selector"
+            oninput="updateSliderValue()"
+          />
+          <label class="custom-control-label" for="hue">Hue</label>
+        </div>
+
+        <div class="custom-control custom-radio d-inline ml-5">
+          <input
+            type="radio"
+            class="custom-control-input"
+            id="saturation"
+            name="hsl-selector"
+            oninput="updateSliderValue()"
+            checked
+          />
+          <label class="custom-control-label" for="saturation"
+            >Saturation</label
+          >
+        </div>
+
+        <div class="custom-control custom-radio d-inline ml-5">
+          <input
+            type="radio"
+            class="custom-control-input"
+            id="lightness"
+            name="hsl-selector"
+            oninput="updateSliderValue()"
+          />
+          <label class="custom-control-label" for="lightness">Lightness</label>
+        </div>
+
+        <br />
+
         <div class="row">
           <div class="col-sm-7 col-lg-4">
-            <label id="lighten" for="toggleButton">Lightness</label>
-
-            <div class="custom-control custom-switch d-inline ml-2">
-              <input
-                type="checkbox"
-                id="toggleButton"
-                onchange="updateSliderValue()"
-                class="custom-control-input"
-              />
-              <label id="darken" for="toggleButton" class="custom-control-label"
-                >Saturation</label
-              >
-            </div>
-
             <div class="form-group mt-4 mb-4">
               <span id="sliderValue">50</span>%
               <input

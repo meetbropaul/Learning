@@ -12,6 +12,9 @@ const alteredColorName = document.getElementById('alteredColorName');
 const btnCopy = document.getElementById('btnCopy');
 const inputColorLabel = document.getElementById('inputColorLabel');
 const alteredColorLabel = document.getElementById('alteredColorLabel');
+const hue = document.getElementById('hue');
+const saturation = document.getElementById('saturation');
+const lightness = document.getElementById('lightness');
 
 function updateUserInput() {
   userInputColor.value = selectColor.value;
@@ -47,7 +50,13 @@ function updateSliderValue() {
   startColor = startColor ? startColor : inputColorName.innerHTML;
   if (startColor) {
     const c = startColor.match(/[0-9]+/g);
-    slider.value = toggleButton.checked ? c[1] : c[2];
+    if (hue.checked) {
+      var y = parseInt(c[0]) / 3.6;
+      slider.value = Math.round(y);
+    } else {
+      slider.value = saturation.checked ? c[1] : c[2];
+    }
+
     sliderValue.innerHTML = slider.value;
   }
 }
@@ -114,10 +123,13 @@ function modifyHSL(hsl) {
   s = c[1];
   l = c[2];
 
-  if (toggleButton.checked) {
+  if (saturation.checked) {
     s = slider.value;
-  } else {
+  } else if (lightness.checked) {
     l = slider.value;
+  } else {
+    h = 3.6 * slider.value < 360 ? 3.6 * slider.value : 0;
+    h = Math.round(h);
   }
 
   var colorInHSL = 'hsl(' + h + ', ' + s + '%, ' + l + '%)';
